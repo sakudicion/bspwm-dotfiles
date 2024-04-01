@@ -48,6 +48,8 @@ Simply you have to copy paste it in your terminal:
     cd ..
     sudo mv zshrc .zshrc
     cp .zshrc ~/
+    cd local
+    sudo cp * ~/.local/
     cd ..
     cd file\ system
     sudo cp bin/sysfetch /bin/
