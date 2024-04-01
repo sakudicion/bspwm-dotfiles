@@ -57,7 +57,10 @@ Simply you have to copy paste it in your terminal:
     cd
 ```
 
-## 5) Now you can reboot
+## 5) Now you can reboot:
 ```bash
     reboot
 ```
+
+## 6) Put rofi theme:
+**To have** a beautiful **rofi** theme, you have to press **Super + R** (to open rofi) and **search** Rofi Theme Selector, go down and select the theme you want and press **Ctrl + A**
