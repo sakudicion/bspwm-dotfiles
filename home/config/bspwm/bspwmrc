@@ -18,7 +18,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #  ║║║║ ║╠╦╝╠╩╗╚═╗╠═╝╠═╣║  ║╣ ╚═╗
 #  ╚╩╝╚═╝╩╚═╩ ╩╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
 
-# Default 1 monitor with 6 workspaces
+# Default 1 monitor with 10 workspaces
 for monitor in $(xrandr -q | grep -w 'connected' | cut -d' ' -f1); do
     bspc monitor "$monitor" -d '1' '2' '3' '4' '5' '6' '7' '8' '9' '0'
 done
@@ -72,9 +72,6 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
-
-# Set 144hz
-xrandr --output HDMI-0 --mode 1920x1080 --rate 144 &
 
 # Nitrogen
 nitrogen --restore &
