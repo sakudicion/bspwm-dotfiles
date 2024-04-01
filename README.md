@@ -40,7 +40,8 @@ Now you have to enter in our directory to copy our file:
 Simply you have to copy paste it in your terminal:
 ```bash
     cd home/config
-    sudo cp * ~/.config/
+    sudo cp -r * ~/.config/
+    sudo chmod +x ~/.config/bspwm/bspwmrc
     cd ../Wallpaper
     mkdir ~/Wallpaper
     cp * ~/Wallpaper
