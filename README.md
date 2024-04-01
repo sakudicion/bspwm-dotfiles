@@ -49,7 +49,7 @@ Simply you have to copy paste it in your terminal:
     cp .zshrc ~/
     cd ..
     cd file\ system
-    cp bin/sysfetch /bin/
+    sudo cp bin/sysfetch /bin/
     sudo chmod +x /bin/sysfetch
     cd ..
     cd usr/share/fonts
