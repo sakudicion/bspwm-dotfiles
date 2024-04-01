@@ -51,9 +51,8 @@ Simply you have to copy paste it in your terminal:
     cd file\ system
     sudo cp bin/sysfetch /bin/
     sudo chmod +x /bin/sysfetch
-    cd ..
     cd usr/share/fonts
-    cp * /usr/share/fonts
+    sudo cp * /usr/share/fonts
     cd
 ```
 
