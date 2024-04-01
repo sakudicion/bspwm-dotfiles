@@ -1,0 +1,1 @@
+yay -S bspwm picom sxhkd cava kitty rofi micro neovim nemo spotify-launcher discord sddm feh waterfox-bin lunar-client zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search noto-fonts-emoji ttf-joypixels ttf-twemoji otf-openmoji ttf-twemoji-color ttf-symbola
