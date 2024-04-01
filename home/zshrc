@@ -1,0 +1,66 @@
+#  ╔═╗╔═╗╦ ╦╦═╗╔═╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗	- sakura and adicion
+#  ╔═╝╚═╗╠═╣╠╦╝║    ║  ║ ║║║║╠╣ ║║ ╦	- our zsh config
+#  ╚═╝╚═╝╩ ╩╩╚═╚═╝  ╚═╝╚═╝╝╚╝╚  ╩╚═╝
+
+setopt PROMPT_SUBST
+#fancy prompt
+#PROMPT="%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m%f %F{magenta}%~%F{red}]%f$%b "
+
+function dir_icon {
+  if [[ "$PWD" == "$HOME" ]]; then
+    echo "%B%F{black}%f%b"
+  else
+    echo "%B%F{cyan}%f%b"
+  fi
+}
+
+PS1='%B%F{blue}%f%b  %B%F{magenta}%n%f%b $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg0} %(?.%B%F{green}.%F{red})%f%b '
+
+# hidden directory prompt thingy
+#PROMPT='$([[ $PWD != $HOME ]] && echo 
+
+setopt prompt_subst
+
+# cute sudo
+export SUDO_PROMPT="give me %u's pass pls: "
+
+# not found
+command_not_found_handler() {
+    printf '%s%s? idk what is that thing\n' "$acc" "$0" >&2
+    return 127
+}
+run () {
+  pgrep -x $1 > /dev/null || $@ &
+}
+
+export PF_INFO="ascii title os host kernel uptime wm memory"
+export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+
+#  ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
+#  ├─┤│└─┐ │ │ │├┬┘└┬┘
+#  ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴ 
+HISTFILE=~/.config/zsh/zhistory
+HISTSIZE=5000
+SAVEHIST=5000
+
+#  ┌─┐┬  ┬┌─┐┌─┐
+#  ├─┤│  │├─┤└─┐
+#  ┴ ┴┴─┘┴┴ ┴└─┘
+alias update="sudo pacman -Syyu"
+alias i="sudo pacman -S"
+alias r="sudo pacman -Rsn"
+alias s="sudo pacman -Ss"
+alias ls="lsd -a"
+
+#  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+#  ├─┘│  │ ││ ┬││││└─┐
+#  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+#  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
+#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
+#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
+$HOME/.local/bin/colorscript -r
+
